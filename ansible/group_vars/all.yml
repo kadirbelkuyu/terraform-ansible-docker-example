@@ -1,0 +1,13 @@
+---
+remote_user: ubuntu
+ansible_sudo_pass: password
+
+aws_ip_address: "{{ hostvars[groups['ubuntu-servers'][0]]['ansible_default_ipv4']['address'] }}"
+
+docker_compose_version: 1.29.2
+
+nginx_server:
+  server_name: example.com
+  listen_port: 80
+  server_root: /usr/share/nginx/html
+  index_file: index.html

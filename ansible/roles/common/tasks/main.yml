@@ -1,0 +1,16 @@
+- name: Update apt cache
+  become: true
+  apt:
+    update_cache: yes
+
+- name: Install common packages
+  become: true
+  apt:
+    name:
+      - git
+      - curl
+      - software-properties-common
+      - apt-transport-https
+      - ca-certificates
+    state: present
+
